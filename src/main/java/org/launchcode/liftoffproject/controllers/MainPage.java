@@ -7,11 +7,11 @@ import org.springframework.web.bind.annotation.ResponseBody;
 import javax.xml.ws.RequestWrapper;
 
 @Controller
-public class HelloWorld {
+public class MainPage {
     @RequestMapping(value = "")
     @ResponseBody
     public String index() {
-        return "Hello, World!";
+        return "Welcome to the Wellness Project!";
     }
 
 }
