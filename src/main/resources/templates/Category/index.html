@@ -9,7 +9,7 @@
 <nav th:replace="fragments :: navigation"></nav>
 
 
-<p th:unless="${categories} and ${categories.size()}">No categories! :(</p>
+<p th:unless="${categories} and ${categories.size()}">Please Add a Food Category</p>
 
 <ul>
     <li th:each="category : ${categories}" th:text="${category.name}">

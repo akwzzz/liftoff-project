@@ -8,20 +8,20 @@
 
 <nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${foods} and ${foods.size()}">No foods! :(</p>
+<p th:unless="${foods} and ${foods.size()}">Please Add a Food</p>
 
 
 <table class="table">
 
     <tr>
         <th>Name</th>
-        <th>Description</th>
+        <th>Servings</th>
         <th>Category</th>
     </tr>
 
     <tr th:each="food : ${foods}">
         <td th:text="${food.name}"></td>
-        <td th:text="${food.description}"></td>
+        <td th:text="${food.servings}"></td>
         <td th:text="${food.category.name}"></td>
     </tr>
 

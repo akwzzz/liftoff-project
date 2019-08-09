@@ -20,8 +20,8 @@ public class Food {
     private String name;
 
     @NotNull
-    @Size(min=1, message = "Description must not be empty")
-    private String description;
+    @Size(min=1, message = "Servings must not be empty")
+    private String servings;
 
     @ManyToOne
     private Category category;
@@ -29,9 +29,9 @@ public class Food {
     @ManyToMany(mappedBy = "foods", cascade = {CascadeType.ALL})
     private List<Menu> menus;
 
-    public Food(String name, String description) {
+    public Food(String name, String servings) {
         this.name = name;
-        this.description = description;
+        this.servings = servings;
     }
 
     public Food() { }
@@ -48,12 +48,12 @@ public class Food {
         this.name = name;
     }
 
-    public String getDescription() {
-        return description;
+    public String getServings() {
+        return servings;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public void setServings(String servings) {
+        this.servings = servings;
     }
 
     public void setCategory(Category category) {
