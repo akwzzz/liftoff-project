@@ -27,7 +27,7 @@ public class Food {
     private Category category;
 
     @ManyToMany(mappedBy = "foods", cascade = {CascadeType.ALL})
-    private List<Menu> menus;
+    private List<Trends> trends;
 
     public Food(String name, String servings) {
         this.name = name;

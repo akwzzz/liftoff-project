@@ -6,7 +6,7 @@ import javax.validation.constraints.Size;
 import java.util.List;
 
 @Entity
-public class Menu {
+public class Trends {
     //fields
     @Id
     @GeneratedValue
@@ -25,11 +25,11 @@ public class Menu {
     }
 
     //constructors
-    public Menu(String name) {
+    public Trends(String name) {
         this.name = name;
     }
 
-    public Menu() { }
+    public Trends() { }
 
 
     //getters & setters

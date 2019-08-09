@@ -1,7 +1,7 @@
 package org.launchcode.liftoffproject.models.data;
 
 
-import org.launchcode.liftoffproject.models.Menu;
+import org.launchcode.liftoffproject.models.Trends;
 import org.springframework.data.repository.CrudRepository;
 import org.springframework.stereotype.Repository;
 
@@ -9,5 +9,5 @@ import javax.transaction.Transactional;
 
 @Repository
 @Transactional
-public interface MenuDao extends CrudRepository<Menu, Integer> {
+public interface TrendsDao extends CrudRepository<Trends, Integer> {
 }

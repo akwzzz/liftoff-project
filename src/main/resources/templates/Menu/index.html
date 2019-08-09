@@ -6,20 +6,17 @@
 
 <h1 th:text="${title}">Default Title</h1>
 
-<nav th:replace="fragments :: navigation"></nav>
 
-<p th:unless="${menus} and ${menus.size()}">No menus! :(</p>
+<div><a href="/">Home</a></div>
 
-<ul>
-    <li th:each="menu : ${menus}">
-        <a th:href="'menu/view/' + ${menu.id}" th:text="${menu.name}"></a>
-    </li>
-</ul>
-<div>
+<div><a href="/food">My Food</a></div>
 
-</div>
+<div><a href="/exercise">My Exercise</a> </div>
 
-<a href="/menu/add">Add Menu</a>
+<div><a href="/sleep">My Sleep</a> </div>
+
+<div><a href="/food">My Wellness</a> </div>
+
 
 </body>
 </html>

@@ -9,13 +9,5 @@
 <nav th:replace="fragments :: navigation"></nav>
 
 
-<ul>
-    <li th:each="food : ${menu.foods}" th:text="${food.name}">
-
-    </li>
-
-</ul>
-<p><a th:href="'/menu/add-item/' + ${menu.id}">Add Food</a></p>
-
 </body>
 </html>
