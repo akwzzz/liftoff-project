@@ -19,10 +19,29 @@ public class Trends {
     @ManyToMany
     private List<Food> foods;
 
+    @ManyToMany
+    private List<Exercise> exercises;
+
+    @ManyToMany
+    private List<Sleep> sleep;
+
+    @ManyToMany List<Wellness> wellness;
 
     public void addItem(Food item) {
         foods.add(item);
     }
+
+    public void addItem(Exercise item) {
+        exercises.add(item);
+    }
+
+    public void addItem(Sleep item) { sleep.add(item); }
+
+    public void addItem(Wellness item) { wellness.add(item); }
+
+
+
+
 
     //constructors
     public Trends(String name) {
@@ -30,6 +49,8 @@ public class Trends {
     }
 
     public Trends() { }
+
+
 
 
     //getters & setters
@@ -52,4 +73,24 @@ public class Trends {
     public List<Food> getFoods() {
         return foods;
     }
+
+    public List<Sleep> getSleeps() {
+        return sleep;
+    }
+
+    public void setSleeps(List<Sleep> sleeps) {
+        this.sleep = sleep;
+    }
+
+    public List<Exercise> getExercises() {
+        return exercises;
+    }
+
+    public void setExercises(List<Exercise> exercises) {
+        this.exercises = exercises;
+    }
+
+    public List<Wellness> getWellness() { return wellness; }
+
+    public void setWellness(List<Wellness> wellness) { this.wellness = wellness; }
 }

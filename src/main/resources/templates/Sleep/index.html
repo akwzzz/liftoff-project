@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org/">
+<head th:replace="fragments :: head"></head>
+
+<body class="container">
+
+<h1 th:text="${title}">Default Title</h1>
+
+<nav th:replace="fragments :: navigation"></nav>
+
+<p th:unless="${sleep} and ${sleep.size()}">How Long Did You Sleep Last Night?</p>
+
+
+<table class="table">
+
+    <tr>
+        <th>Duration (Hours)</th>
+    </tr>
+
+    <tr th:each="sleep : ${sleep}">
+        <td th:text="${sleep.duration}"></td>
+    </tr>
+
+</table>
+<a href="/sleep/add">Add</a>
+
+
+</body>
+</html>
