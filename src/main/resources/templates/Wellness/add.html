@@ -8,9 +8,15 @@
 
 <form method="post" style="max-width:600px;" th:object="${wellness}">
     <div class="form-group">
-        <label th:for="score">Wellness Score (1-10)</label>
-        <input class="form-control" th:field="*{score}" />
-        <span th:errors="*{score}" class="error"></span>
+        <label th:for="score">Today's Wellness Score from 1-5 (5 = Best)</label>
+        <select name="cars" th:field="*{score}">
+        <option value="1">1</option>
+        <option value="2">2</option>
+        <option value="3">3</option>
+        <option value="4">4</option>
+            <option value="5">5</option>
+    </select>
+<!--        <span th:errors="*{score}" class="error"></span>-->
     </div>
 
     <input type="submit" value="Add Score" />
