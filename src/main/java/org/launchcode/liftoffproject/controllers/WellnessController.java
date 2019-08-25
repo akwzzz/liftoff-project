@@ -10,6 +10,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -58,5 +59,21 @@ public class WellnessController {
         wellnessDao.save(newWellness);
         return "redirect:";
     }
+    @RequestMapping(value = "remove", method = RequestMethod.GET)
+    public String displayRemoveWellnessForm(Model model) {
+        model.addAttribute("wellness", wellnessDao.findAll());
+        model.addAttribute("title", "Remove Wellness Entry");
+        return "wellness/remove";
+    }
 
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveWellnessForm(@RequestParam int[] wellnessIds) {
+
+        for (int wellnessId : wellnessIds) {
+
+            wellnessDao.delete(wellnessId);
+        }
+
+        return "redirect:/wellness";
+    }
 }

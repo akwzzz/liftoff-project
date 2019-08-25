@@ -14,15 +14,18 @@
 <table class="table">
 
     <tr>
-        <th>Today's Wellness Score from 1-5 (5 = Best)</th>
+        <th>Date</th>
+        <th>Wellness Score from 1-5 (5 = Best)</th>
     </tr>
 
     <tr th:each="wellness : ${wellness}">
+        <td th:text="${wellness.date}"></td>
         <td th:text="${wellness.score}"></td>
     </tr>
 
 </table>
-<a href="/wellness/add">Add</a>
+<a href="/wellness/add">Add</a> |
+<a href="/wellness/remove">Remove</a>
 
 
 </body>

@@ -14,15 +14,17 @@
 <table class="table">
 
     <tr>
+        <th>Date</th>
         <th>Duration (Hours)</th>
     </tr>
 
     <tr th:each="sleep : ${sleep}">
+        <td th:text="${sleep.date}"></td>
         <td th:text="${sleep.duration}"></td>
     </tr>
-
 </table>
-<a href="/sleep/add">Add</a>
+<a href="/sleep/add">Add</a> |
+<a href="/sleep/remove">Remove</a>
 
 
 </body>

@@ -10,6 +10,7 @@ import org.springframework.validation.Errors;
 import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
+import org.springframework.web.bind.annotation.RequestParam;
 
 import javax.validation.Valid;
 
@@ -57,6 +58,24 @@ public class SleepController {
 
         sleepDao.save(newSleep);
         return "redirect:";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.GET)
+    public String displayRemoveSleepForm(Model model) {
+        model.addAttribute("sleeps", sleepDao.findAll());
+        model.addAttribute("title", "Remove Sleep Entry");
+        return "sleep/remove";
+    }
+
+    @RequestMapping(value = "remove", method = RequestMethod.POST)
+    public String processRemoveSleepForm(@RequestParam int[] sleepIds) {
+
+        for (int sleepId : sleepIds) {
+
+            sleepDao.delete(sleepId);
+        }
+
+        return "redirect:/sleep";
     }
 
 }
