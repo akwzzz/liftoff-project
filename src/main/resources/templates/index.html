@@ -2,11 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
+<nav th:replace="fragments :: navigation"></nav>
+
+
 <body class="container">
 
 <h1 th:text="${title}">Default Title</h1>
-
-<nav th:replace="fragments :: navigation"></nav>
+<h4> This is an app for people to track how factors such as food, exercise, and sleep impact our
+    well-being every day!</h4>
 
 
 <u><i><h2 th:text="${#calendars.format(#calendars.createNow(), 'MMM dd yyyy')}">Today's Date</h2></i></u>

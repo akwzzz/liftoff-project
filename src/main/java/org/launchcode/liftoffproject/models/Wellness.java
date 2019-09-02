@@ -26,7 +26,7 @@ public class Wellness {
     @ManyToMany(mappedBy = "wellness", cascade = {CascadeType.ALL})
     private List<Trends> trends;
 
-    public Wellness(String score) {
+    public Wellness(String score, String date) {
         this.score = score;
         this.date = date;
     }

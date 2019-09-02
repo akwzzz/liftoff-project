@@ -2,11 +2,14 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
+<nav th:replace="fragments :: navigation"></nav>
+
+
 <body class="container">
 
 <h1 th:text="${title}">Default Title</h1>
 
-<nav th:replace="fragments :: navigation"></nav>
+
 
 <p th:unless="${sleep} and ${sleep.size()}">How Long Did You Sleep Last Night?</p>
 
@@ -25,6 +28,7 @@
 </table>
 <a href="/sleep/add">Add</a> |
 <a href="/sleep/remove">Remove</a>
+
 
 
 </body>

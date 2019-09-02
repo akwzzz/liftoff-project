@@ -23,12 +23,17 @@ public class Exercise {
     @Size(min=1, message = "Duration must not be empty")
     private String duration;
 
+    @NotNull
+    @Size(min=1, message = "Date must not be empty")
+    private String date;
+
     @ManyToMany(mappedBy = "exercises", cascade = {CascadeType.ALL})
     private List<Trends> trends;
 
-    public Exercise(String name, String duration) {
+    public Exercise(String name, String duration, String date) {
         this.name = name;
         this.duration = duration;
+        this.date = date;
     }
 
     public Exercise() { }
@@ -51,5 +56,13 @@ public class Exercise {
 
     public void setDuration(String duration) {
         this.duration = duration;
+    }
+
+    public String getDate() {
+        return date;
+    }
+
+    public void setDate(String date) {
+        this.date = date;
     }
 }

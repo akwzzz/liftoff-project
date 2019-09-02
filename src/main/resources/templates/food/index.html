@@ -2,11 +2,13 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org/">
 <head th:replace="fragments :: head"></head>
 
+<nav th:replace="fragments :: navigation"></nav>
+
+
 <body class="container">
 
 <h1 th:text="${title}">Default Title</h1>
 
-<nav th:replace="fragments :: navigation"></nav>
 
 <p th:unless="${foods} and ${foods.size()}">Please Add a Food</p>
 
@@ -14,12 +16,14 @@
 <table class="table">
 
     <tr>
+        <th>Date</th>
         <th>Name</th>
         <th>Servings</th>
         <th>Category</th>
     </tr>
 
     <tr th:each="food : ${foods}">
+        <td th:text="${food.date}"></td>
         <td th:text="${food.name}"></td>
         <td th:text="${food.servings}"></td>
         <td th:text="${food.category.name}"></td>
