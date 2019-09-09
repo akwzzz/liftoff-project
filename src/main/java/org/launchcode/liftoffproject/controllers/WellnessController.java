@@ -32,14 +32,14 @@ public class WellnessController {
     public String index(Model model) {
 
         model.addAttribute("wellness", wellnessDao.findAll());
-        model.addAttribute("title", "My Wellness");
+        model.addAttribute("title", "My Wellness Tracker");
 
         return "wellness/index";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddWellnessForm(Model model) {
-        model.addAttribute("title", "Add Wellness");
+        model.addAttribute("title", "Add Today's Wellness Score");
         model.addAttribute(new Wellness());
         return "wellness/add";
     }
@@ -62,7 +62,7 @@ public class WellnessController {
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveWellnessForm(Model model) {
         model.addAttribute("wellness", wellnessDao.findAll());
-        model.addAttribute("title", "Remove Wellness Entry");
+        model.addAttribute("title", "Remove A Wellness Entry");
         return "wellness/remove";
     }
 

@@ -32,14 +32,14 @@ public class ExerciseController {
     public String index(Model model) {
 
         model.addAttribute("exercises", exerciseDao.findAll());
-        model.addAttribute("title", "My Exercises");
+        model.addAttribute("title", "My Exercise Tracker");
 
         return "exercise/index";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddExerciseForm(Model model) {
-        model.addAttribute("title", "Add Exercise");
+        model.addAttribute("title", "Add An Activity");
         model.addAttribute(new Exercise());
         return "exercise/add";
     }
@@ -63,7 +63,7 @@ public class ExerciseController {
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveExerciseForm(Model model) {
         model.addAttribute("exercises", exerciseDao.findAll());
-        model.addAttribute("title", "Remove Exercise");
+        model.addAttribute("title", "Remove An Activity");
         return "exercise/remove";
     }
 

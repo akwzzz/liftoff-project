@@ -29,14 +29,14 @@ public class SleepController {
     public String index(Model model) {
 
         model.addAttribute("sleep", sleepDao.findAll());
-        model.addAttribute("title", "My Sleep");
+        model.addAttribute("title", "My Sleep Tracker");
 
         return "sleep/index";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddSleepForm(Model model) {
-        model.addAttribute("title", "Add Sleep");
+        model.addAttribute("title", "Add Sleep Entry (For Last Night)");
         model.addAttribute(new Sleep());
         return "sleep/add";
     }
@@ -60,7 +60,7 @@ public class SleepController {
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveSleepForm(Model model) {
         model.addAttribute("sleeps", sleepDao.findAll());
-        model.addAttribute("title", "Remove Sleep Entry");
+        model.addAttribute("title", "Remove A Sleep Entry");
         return "sleep/remove";
     }
 

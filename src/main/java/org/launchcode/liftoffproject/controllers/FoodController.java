@@ -37,7 +37,7 @@ public class FoodController {
     public String index(Model model) {
 
         model.addAttribute("foods", foodDao.findAll());
-        model.addAttribute("title", "My Foods");
+        model.addAttribute("title", "My Food Tracker");
         model.addAttribute("categories", categoryDao.findAll());
 
         return "food/index";
@@ -45,7 +45,7 @@ public class FoodController {
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddFoodForm(Model model) {
-        model.addAttribute("title", "Add Food");
+        model.addAttribute("title", "Add Today's Food");
         model.addAttribute(new Food());
         model.addAttribute("categories", categoryDao.findAll());
         return "food/add";
@@ -73,7 +73,7 @@ public class FoodController {
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveFoodForm(Model model) {
         model.addAttribute("foods", foodDao.findAll());
-        model.addAttribute("title", "Remove Food");
+        model.addAttribute("title", "Remove A Food");
         return "food/remove";
     }
 

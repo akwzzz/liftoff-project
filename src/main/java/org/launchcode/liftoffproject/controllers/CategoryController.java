@@ -25,13 +25,13 @@ public class CategoryController {
     public String index(Model model) {
         Iterable<Category> categories = categoryDao.findAll();
         model.addAttribute("categories", categories);
-        model.addAttribute("title", "Categories");
+        model.addAttribute("title", "Food Categories");
         return "category/index";
     }
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddCategoryForm(Model model) {
-        model.addAttribute("title", "Add Category");
+        model.addAttribute("title", "Add Food Category");
         model.addAttribute("category", new Category());
         return "category/add";
     }
@@ -51,7 +51,7 @@ public class CategoryController {
     @RequestMapping(value = "remove", method = RequestMethod.GET)
     public String displayRemoveCategoryForm(Model model) {
         model.addAttribute("categories", categoryDao.findAll());
-        model.addAttribute("title", "Remove Category");
+        model.addAttribute("title", "Remove Food Category");
         return "category/remove";
     }
 

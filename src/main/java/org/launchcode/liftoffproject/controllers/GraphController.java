@@ -12,11 +12,11 @@ public class GraphController {
 
     @GetMapping("/displayBarGraph")
     public String barGraph(Model model) {
-        Map<String,Integer> surveyMap=new LinkedHashMap<>();
-        surveyMap.put("9/7/19", 5);
-        surveyMap.put("9/8/19", 3);
-        surveyMap.put("9/9/19", 4);
-        model.addAttribute("surveyMap", surveyMap);
+        Map<String,Integer> wellnessMap=new LinkedHashMap<>();
+        wellnessMap.put("9/7/19", 5);
+        wellnessMap.put("9/8/19", 3);
+        wellnessMap.put("9/9/19", 4);
+        model.addAttribute("wellnessMap", wellnessMap);
         return "barGraph";
     }
 }
