@@ -2,7 +2,6 @@ package org.launchcode.liftoffproject.controllers;
 
 import org.launchcode.liftoffproject.models.Wellness;
 import org.launchcode.liftoffproject.models.data.WellnessDao;
-import org.launchcode.liftoffproject.models.data.TrendsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +23,6 @@ public class WellnessController {
     @Autowired
     private WellnessDao wellnessDao;
 
-    @Autowired
-    private TrendsDao trendsDao;
 
     // Request path: /wellness
     @RequestMapping(value = "")

@@ -1,9 +1,10 @@
 package org.launchcode.liftoffproject.models;
 
-import javax.persistence.*;
+import javax.persistence.Entity;
+import javax.persistence.GeneratedValue;
+import javax.persistence.Id;
 import javax.validation.constraints.NotNull;
 import javax.validation.constraints.Size;
-import java.util.List;
 
 /**
  * Created by LaunchCode
@@ -23,8 +24,6 @@ public class Sleep {
     @Size(min=1, message = "Date must not be empty")
     private String date;
 
-    @ManyToMany(mappedBy = "sleep", cascade = {CascadeType.ALL})
-    private List<Trends> trends;
 
     public Sleep(String duration, String date) {
         this.duration = duration;

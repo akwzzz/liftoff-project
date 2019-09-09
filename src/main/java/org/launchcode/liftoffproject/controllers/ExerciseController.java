@@ -2,7 +2,6 @@ package org.launchcode.liftoffproject.controllers;
 
 import org.launchcode.liftoffproject.models.Exercise;
 import org.launchcode.liftoffproject.models.data.ExerciseDao;
-import org.launchcode.liftoffproject.models.data.TrendsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -24,8 +23,6 @@ public class ExerciseController {
     @Autowired
     private ExerciseDao exerciseDao;
 
-    @Autowired
-    private TrendsDao trendsDao;
 
     // Request path: /exercise
     @RequestMapping(value = "")

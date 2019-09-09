@@ -4,7 +4,6 @@ import org.launchcode.liftoffproject.models.Category;
 import org.launchcode.liftoffproject.models.Food;
 import org.launchcode.liftoffproject.models.data.CategoryDao;
 import org.launchcode.liftoffproject.models.data.FoodDao;
-import org.launchcode.liftoffproject.models.data.TrendsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -29,8 +28,6 @@ public class FoodController {
     @Autowired
     private CategoryDao categoryDao;
 
-    @Autowired
-    private TrendsDao trendsDao;
 
     // Request path: /food
     @RequestMapping(value = "")

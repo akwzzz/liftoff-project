@@ -2,7 +2,6 @@ package org.launchcode.liftoffproject.controllers;
 
 import org.launchcode.liftoffproject.models.Sleep;
 import org.launchcode.liftoffproject.models.data.SleepDao;
-import org.launchcode.liftoffproject.models.data.TrendsDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
@@ -21,8 +20,6 @@ public class SleepController {
     @Autowired
     private SleepDao sleepDao;
 
-    @Autowired
-    private TrendsDao trendsDao;
 
     // Request path: /sleep
     @RequestMapping(value = "")
@@ -36,7 +33,7 @@ public class SleepController {
 
     @RequestMapping(value = "add", method = RequestMethod.GET)
     public String displayAddSleepForm(Model model) {
-        model.addAttribute("title", "Add Sleep Entry (For Last Night)");
+        model.addAttribute("title", "Add Sleep Entry");
         model.addAttribute(new Sleep());
         return "sleep/add";
     }
